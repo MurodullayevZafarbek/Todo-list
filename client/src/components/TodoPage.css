@@ -1,0 +1,232 @@
+:root{
+   --color:white;
+   --color1:#5A5A5A;
+   --color2:black;
+   --color3:#D8D8D8;
+   --bgcolor:white;
+}
+.TodoPage{
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   background: var(--bgcolor);
+}
+.Category{
+   display: flex;
+   height: 100%;
+   flex-direction: column;
+   justify-content: flex-start;
+   padding: 30px 30px 0 50px;
+   border-right: 2px solid var(--color3);
+}
+.Category h1{
+   font-style: normal;
+   font-weight: 700;
+   font-size: 31px;
+   line-height: 37px;
+   color: var(--color2);
+}
+.Category>input::placeholder,
+.Task>input::placeholder{
+   color:var(--color1)
+}
+.Category>input,
+.Task>input{
+   font-style: normal;
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 22px;
+   width: 100%;
+   padding: 13px 27px;
+   border: none;
+   background: var(--color3);
+   border-radius: 8px;
+   margin-top: 25px;
+}
+.Category .categ{
+   display: flex;
+   flex-direction: column;
+   margin-top: 32px;
+   gap: 24px;
+}
+.Category .categ .child{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.Category .categ .child a{
+   font-style: normal;
+   font-weight: 700;
+   font-size: 22px;
+   line-height: 26px;
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+   gap: 6px;
+}
+.Category .categ .child div{
+   display: flex;
+   align-items: center;
+   gap: 20px;
+}
+.Category .categ .child div .color{
+   width: 13px;
+   height: 13px;
+   border-radius:50%;
+   position: relative;
+}
+.Category .categ .child div .color div{
+   position: absolute;
+   width: 13px;
+   height: 13px;
+   background-color: green;
+   border-radius: 50%;
+   transition: all .4s;
+   transition: transform .2s;
+   opacity: 0;
+   transform: rotate(calc(var(--i) * 35deg + 90deg)) translate(13px);
+   
+}
+.Category .categ .child div .color div.checkedColor{
+   opacity: 1;
+   transform: rotate(calc(var(--i) * 35deg + 90deg)) translate(25px);
+}
+.Category .categ .child .delete{
+   width: 29px;
+   height: 29px;
+   background-color: var(--color2);
+   border-radius: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+}
+.Category .categ .child .delete::after{
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+.Category .categ .child img{
+   width: 25px;
+   height: 25px;
+   font-size: 100px;
+   padding: 2px;
+   border-radius: 5px;
+}
+.Category .categ .child .delete.active img{
+   animation: shake 1.02s cubic-bezier(.36,.07,.19,.97) both;
+   transform: translate3d(0, 0, 0);
+   backface-visibility: hidden;
+   perspective: 1000px;
+}
+@keyframes shake {
+   10%, 90% {
+     transform: translate3d(-1px, 0, 0) rotate(-10deg);
+   }
+   
+   20%, 80% {
+     transform: translate3d(2px, 0, 0) rotate(10deg);
+   }
+ 
+   30%, 50%, 70% {
+     transform: translate3d(-4px, 0, 0) rotate(-10deg);
+   }
+ 
+   40%, 60% {
+     transform: translate3d(4px, 0, 0) rotate(10deg);
+   }
+ }
+.Task{
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   width: 80%;
+   padding: 30px 50px;
+}
+.Item{
+   margin-top: 32px;
+   display: flex;
+   align-items: center;
+   gap: 20px;
+}
+.Item .inp{
+   position: relative;
+   width: 28px;
+   height: 28px;
+   border: 1px solid #EA5959;
+   border-radius: 8px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.Item .inp input{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   opacity: 0;
+}
+.Item .inp img{
+   display:none;
+}
+.Item .inp input:checked ~img{
+   display: block;
+}
+.Item p{
+   font-style: normal;
+   font-weight: normal;
+   font-size: 18px;
+   line-height: 22px;
+   color: #5A5A5A;
+   margin: 0;
+}
+.Item a{
+   font-style: normal;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 14px;
+   display: flex;
+   color:white;
+   gap: 22px;
+   padding: 5px 25px;
+   border-radius:4px 0 0 4px;
+   position: relative;
+}
+.Item a::after{
+   content: "";
+   position: absolute;
+   right: -24px;
+   top: 0;
+   background-color: none;
+   width: 24px;
+   height: 24px;   
+}
+.Item a:hover{
+   cursor: pointer;
+}
+.Item a div{
+   position: absolute;
+   top: 0;
+   right: -24px;
+   width: 24px;
+   height: 24px;
+   background-color:var(--color2);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 0 4px 4px 0
+}
+.Item a div img{
+   width: 70%;
+}
+.Item a .delete.active img{
+   animation: shake 1.02s cubic-bezier(.36,.07,.19,.97) both;
+   transform: translate3d(0, 0, 0);
+   backface-visibility: hidden;
+   perspective: 1000px;
+}
