@@ -9,10 +9,10 @@ function signup() {
         Fn.IsEmpty(login)
         Fn.IsEmpty(password)
         let data = await DATA.addUser({name,login,password})
-        if(data.title=="User added"){
+        if(data.title==="User added"){
             window.location.replace('/auth/signin')
         }
-        if(data.message=='exsist'){
+        if(data.message==='exsist'){
             alert("User olready exsist")
         }
     }
@@ -34,7 +34,7 @@ function signup() {
                         <input type="password" className="form-control" id="password" placeholder="Password" />
                         <label htmlFor="floatingPassword">Password</label>
                     </div>
-                    <a onClick={addUser} className="w-100 btn btn-lg btn-primary mt-3" type="submit">Sign Up</a>
+                    <button onClick={addUser} className="w-100 btn btn-lg btn-primary mt-3" type="submit">Sign Up</button>
                     <a href='/auth/signin' className="btn btn-outline-warning mt-5">or have an account</a>
                 </form>
             </main>

@@ -27,7 +27,7 @@ controllers.checkOneUser = async (req, res, next) => {
     try{
         let  {login,password} = req.body
         let data = await User.findOne({login})
-        if(data==null){
+        if(data===null){
             res.json({title:"User not found"}).status(200)
         }else{
             bcrypt.compare(password,data.password,async (err,compare)=>{

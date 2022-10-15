@@ -7,13 +7,13 @@ function Signin() {
         Fn.isEmpty(login)
         Fn.isEmpty(password)
         DATA.checkUser({login,password}).then(data=>{
-            if(data.title=="User not found"){
+            if(data.title==="User not found"){
                 alert("user not found")
             }
-            if(data.title=="Danger"){
+            if(data.title==="Danger"){
                 alert("password Wrong")
             }
-            if(data.title=="Success"){
+            if(data.title==="Success"){
                 window.localStorage.setItem("TOKEN",data.data)
                 window.location.replace('/')
             }
@@ -32,7 +32,7 @@ function Signin() {
                         <input type="password" className="form-control" id="password" placeholder="Password" />
                         <label htmlFor="floatingPassword">Password</label>
                     </div>
-                    <a onClick={checkuser} className="w-100 btn btn-lg btn-primary mt-3" type="submit">Sign In</a>
+                    <button onClick={checkuser} className="w-100 btn btn-lg btn-primary mt-3" type="submit">Sign In</button>
                     <a href="/auth/signup" className="btn btn-outline-warning mt-5">Sign up</a>
                 </form>
             </main>

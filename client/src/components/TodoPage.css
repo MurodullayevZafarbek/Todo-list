@@ -185,7 +185,7 @@
    color: #5A5A5A;
    margin: 0;
 }
-.Item a{
+.Item button{
    font-style: normal;
    font-weight: 500;
    font-size: 16px;
@@ -196,8 +196,9 @@
    padding: 5px 25px;
    border-radius:4px 0 0 4px;
    position: relative;
+   border:none;
 }
-.Item a::after{
+.Item button::after{
    content: "";
    position: absolute;
    right: -24px;
@@ -206,10 +207,10 @@
    width: 24px;
    height: 24px;   
 }
-.Item a:hover{
+.Item button:hover{
    cursor: pointer;
 }
-.Item a div{
+.Item button div{
    position: absolute;
    top: 0;
    right: -24px;
@@ -221,10 +222,10 @@
    justify-content: center;
    border-radius: 0 4px 4px 0
 }
-.Item a div img{
+.Item button div img{
    width: 70%;
 }
-.Item a .delete.active img{
+.Item button .delete.active img{
    animation: shake 1.02s cubic-bezier(.36,.07,.19,.97) both;
    transform: translate3d(0, 0, 0);
    backface-visibility: hidden;

@@ -39,7 +39,6 @@ function Category() {
 
    useEffect(() => {
       dispatch({ type:"FETCH_CATEGORY"})
-      console.log(1);
    },[])
 
    return (
@@ -50,7 +49,7 @@ function Category() {
             <div className="child">
                <div>
                   <div className='color' style={{ backgroundColor: 'black' }}></div>
-                  <a href="" style={{ color: 'black' }}>All</a>
+                  <a href="/" style={{ color: 'black' }}>All</a>
                </div>
             </div>
             <div className="child">
@@ -63,7 +62,7 @@ function Category() {
                      <div style={{ '--i': "4", backgroundColor: "purple" }}></div>
                      <div style={{ '--i': "5", backgroundColor: "blue" }}></div>
                   </div>
-                  <a href="" style={{ color: 'red' }}>All</a>
+                  <a href="/" style={{ color: 'red' }}>All</a>
                </div>
                <div className="delete" onClick={deleteCategory}>
                   <img src={bin} alt="" />

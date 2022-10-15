@@ -11,7 +11,7 @@ function Item({data}) {
             <img src={check} alt="" />
          </div>
          <p>Lorem ipsum dolor sit amet.</p>
-         <a onClick={(e)=>{deleteItem(e)}} style={{backgroundColor:"red"}}>Uncategorized <div className='delete'><img src={bin} width="10px" alt="" /></div></a>
+         <button onClick={(e)=>{deleteItem(e)}} style={{backgroundColor:"red"}}>Uncategorized <div className='delete'><img src={bin} width="10px" alt="" /></div></button>
       </div>
    );
 }
