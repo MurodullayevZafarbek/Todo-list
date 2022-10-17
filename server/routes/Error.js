@@ -1,9 +1,9 @@
-const { Router } = require('express');
-const router = Router();
+const { Router } = require('express')
+const router = Router()
 
-/*Error*/
+/*Error page*/
 router.get('/',(req,res,next)=>{
-    res.json({message:"Page not found"}).status(400)
+   res.json({message:"Page not found"}).status(404)
 })
 
-module.exports = router;
+module.exports = router

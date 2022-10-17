@@ -1,7 +1,8 @@
 import DATA from "./data"
 import Fn from "./function"
 function Signin() {
-    function checkuser(){
+   function checkuser() {
+       console.log("ok");
         let login = document.getElementById('login').value
         let password = document.getElementById('password').value
         Fn.isEmpty(login)
@@ -13,7 +14,7 @@ function Signin() {
             if(data.title==="Danger"){
                 alert("password Wrong")
             }
-            if(data.title==="Success"){
+           if (data.title === "Success") {
                 window.localStorage.setItem("TOKEN",data.data)
                 window.location.replace('/')
             }
@@ -32,7 +33,7 @@ function Signin() {
                         <input type="password" className="form-control" id="password" placeholder="Password" />
                         <label htmlFor="floatingPassword">Password</label>
                     </div>
-                    <button onClick={checkuser} className="w-100 btn btn-lg btn-primary mt-3" type="submit">Sign In</button>
+                    <button type="button" onClick={checkuser} className="w-100 btn btn-lg btn-primary mt-3">Sign In</button>
                     <a href="/auth/signup" className="btn btn-outline-warning mt-5">Sign up</a>
                 </form>
             </main>

@@ -5,9 +5,9 @@ function signup() {
         let name = document.getElementById('userName').value
         let login = document.getElementById('login').value
         let password = document.getElementById('password').value
-        Fn.IsEmpty(name)
-        Fn.IsEmpty(login)
-        Fn.IsEmpty(password)
+       Fn.isEmpty(name)
+       Fn.isEmpty(login)
+       Fn.isEmpty(password)
         let data = await DATA.addUser({name,login,password})
         if(data.title==="User added"){
             window.location.replace('/auth/signin')
@@ -34,7 +34,7 @@ function signup() {
                         <input type="password" className="form-control" id="password" placeholder="Password" />
                         <label htmlFor="floatingPassword">Password</label>
                     </div>
-                    <button onClick={addUser} className="w-100 btn btn-lg btn-primary mt-3" type="submit">Sign Up</button>
+                    <button onClick={addUser} className="w-100 btn btn-lg btn-primary mt-3" type="button">Sign Up</button>
                     <a href='/auth/signin' className="btn btn-outline-warning mt-5">or have an account</a>
                 </form>
             </main>

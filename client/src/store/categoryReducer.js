@@ -1,6 +1,6 @@
 import axios from "axios"
 const defaultState = {
-   category:[]
+   category: fetchingCategory()
 }
 
 

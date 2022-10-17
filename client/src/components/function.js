@@ -3,4 +3,4 @@ let isEmpty=(title)=>{
         alert("Fill the form")
     }
 }
-export default isEmpty
+export default {isEmpty}
