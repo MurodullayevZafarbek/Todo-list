@@ -44,7 +44,7 @@ controllers.checkOneUser = async (req, res, next) => {
    } catch (e) {
       res.json({ title: "ERROR", message: e.message }).status(e.status)
    }
-}
+}  
 
 controllers.logOut = async (req, res, next) => {
    try {

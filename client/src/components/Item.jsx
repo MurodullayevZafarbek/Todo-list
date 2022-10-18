@@ -9,8 +9,11 @@ function Item({ data, category }) {
    function deleteItem(e, categoryId, id) {
       e.target.querySelector('.delete').classList.add('active')
       setTimeout(() => {
-         axios.delete(`http://localhost:5000/category/list/${categoryId}/${id}`, {
-               token: window.localStorage.getItem("TOKEN")
+         axios.delete(  `http://localhost:5000/category/list/${categoryId}/${id}`, {
+            headers: {
+               'x-access-token': window.localStorage.getItem("TOKEN")
+            },
+            token: window.localStorage.getItem("TOKEN")
          }).then(data => {
             if (data) {
                dispatch({ type: "FETCH_CATEGORY" })
